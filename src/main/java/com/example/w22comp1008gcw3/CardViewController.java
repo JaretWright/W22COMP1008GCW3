@@ -32,6 +32,7 @@ public class CardViewController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //create a DeckOfCards
         deck = new DeckOfCards();
+        deck.shuffle();
         viewNextCard();
     }
 
