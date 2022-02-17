@@ -1,10 +1,13 @@
 package com.example.w22comp1008gcw3;
 
+import javafx.scene.image.Image;
+
 import java.util.Arrays;
 import java.util.List;
 
 public class Card {
     private String suit, faceName;
+    private Image cardImage;
 
     /**
      * This is the constructor, it takes the face name and the suit
@@ -13,6 +16,14 @@ public class Card {
     public Card(String faceName,String suit) {
         setSuit(suit);
         setFaceName(faceName);
+
+        //add the Card Image to the object
+        String fileName = String.format("images/%s_of_%s.png",faceName,suit);
+        cardImage = new Image(getClass().getResource(fileName).toExternalForm());
+    }
+
+    public Image getCardImage() {
+        return cardImage;
     }
 
     public String getSuit() {
